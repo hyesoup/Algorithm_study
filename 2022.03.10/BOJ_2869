@@ -1,0 +1,11 @@
+k=int(input())
+n=0
+while 1:
+    n += 1
+    if 1+3*n*(n-1) == k:
+        print(n)
+        break
+
+    elif 1+3*n*(n-1) > k:
+        print(n)
+        break
