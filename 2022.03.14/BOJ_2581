@@ -4,11 +4,14 @@ n = int(input())
 array = []
 
 def is_prime_num(x):
+    # X가 1이면 False return
     if x == 1:
         return 0
     for i in range(2, int(math.sqrt(x)+1)):
+        # x가 소수 아니면 false return
         if x%i == 0:
             return 0
+    # x가 소수면 array에 추가
     return array.append(x)
 
 for j in range(m, n+1):
