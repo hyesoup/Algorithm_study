@@ -1,0 +1,23 @@
+import sys
+input = sys.stdin.readline
+
+def is_prime(n,m):
+    m += 1
+    flg = [True] * m
+    for i in range(2, int(m**0.5)+1):
+        if flg[i] == True:
+            for j in range(i*2, m, i):
+                flg[j] = False
+    cnt = 0
+    for i in range(n+1,m):
+        if i>1 and flg[i] == True:
+            cnt += 1
+
+    return cnt
+
+
+while True:
+    n = int(input())
+    if n == 0:
+        break
+    print(is_prime(n, 2*n))
