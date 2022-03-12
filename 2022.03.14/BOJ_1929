@@ -1,0 +1,22 @@
+# 에라토스테네스 체 사용
+
+import sys
+input = sys.stdin.readline
+m, n = map(int, input().split())
+
+def is_prime(m,n):
+    n += 1
+    # n까지 소수라고 가정
+    flg = [True] * n
+    # 소수가 있으면 소수는 남기고 소수의 배수들을 False 처리 (루트n까지만 반복)  
+    for i in range(2, int(n**0.5)+1):
+        if flg[i] == True:
+            for j in range(i*2, n, i):
+                flg[j] = False
+                
+    # 1은 소수가 아니므로 1을 제외한 나머지를 출력 (m과 n의 범위 내에서)
+    for i in range(m,n):
+        if i>1 and flg[i] == True:
+            print(i)
+
+is_prime(m,n)
