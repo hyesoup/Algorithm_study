@@ -1,0 +1,21 @@
+import sys
+input = sys.stdin.readline
+
+# 소수 판별
+flg = [False, False] + [True]*10000
+for i in range(2,101):
+    if flg[i]:
+        for j in range(i*2, 10001, i):
+            flg[j] = False
+
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    a = n//2
+    b = a
+    for _ in range(10000):
+        if flg[a] and flg[b]:
+            print(a,b)
+            break
+        a -= 1
+        b += 1
