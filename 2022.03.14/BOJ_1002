@@ -1,0 +1,22 @@
+import math
+n = int(input())
+for _ in range(n):
+    x1, y1, r1, x2, y2, r2 = map(int, input().split())
+
+    # 두 원 사이의 거리
+    distance = math.sqrt((x1-x2)**2 + (y1-y2)**2)
+
+    # 두 원이 동일할 때
+    if r1 == r2 and distance == 0:
+        print(-1)
+
+    # 두 원이 내접 또는 외접할 때
+    elif distance == r1+r2 or distance == abs(r1-r2):
+        print(1)
+
+    # 두 원이 두 점에서 접할 때
+    elif abs(r1-r2) < distance < r1+r2:
+        print(2)
+
+    else:
+        print(0)
