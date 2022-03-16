@@ -1,3 +1,4 @@
+# while문을 이용한 풀이
 n = int(input())
 answer = 1
 while n > 1:
@@ -5,3 +6,11 @@ while n > 1:
     n -= 1
 
 print(answer)
+
+# 재귀를 이용한 풀이
+def fac(n):
+    if n==0 or n==1:
+        return 1
+    return n*fac(n-1)
+
+print(fac(int(input())))
