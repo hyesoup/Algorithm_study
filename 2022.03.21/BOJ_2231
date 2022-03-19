@@ -1,0 +1,19 @@
+import sys
+input = sys.stdin.readline
+
+first_n = int(input())
+n = 0
+flg = 0
+while n < first_n:
+    n += 1
+    n_sum = n
+    for i in str(n):
+        n_sum += int(i)
+
+    if n_sum == first_n:
+        print(n)
+        flg = 1
+        break
+
+if flg == 0:
+    print(0)
