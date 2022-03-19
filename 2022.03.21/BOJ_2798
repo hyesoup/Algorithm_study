@@ -1,0 +1,12 @@
+from itertools import combinations
+
+n,m = map(int, input().split())
+array = list(map(int, input().split()))
+
+sum_combi = [sum(i) for i in list(combinations(array, 3))]
+max_sum = 0
+
+for i in sum_combi:
+    if i <= m:
+        max_sum = max(i, max_sum)
+print(max_sum)
