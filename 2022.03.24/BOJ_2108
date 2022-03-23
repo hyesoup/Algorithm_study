@@ -1,0 +1,20 @@
+import sys
+from collections import Counter
+input = sys.stdin.readline
+
+n = int(input())
+array = [int(input()) for _ in range(n)]
+
+print(round(sum(array)/len(array)))
+
+print(sorted(array)[len(array)//2])
+
+
+if len(Counter(sorted(array)).most_common()) == 1:
+    print(array[0])
+elif Counter(sorted(array)).most_common()[0][1] ==  Counter(sorted(array)).most_common()[1][1]:
+    print(Counter(sorted(array)).most_common()[1][0])
+else:
+    print(Counter(sorted(array)).most_common()[0][0])
+
+print(max(array)-min(array))
