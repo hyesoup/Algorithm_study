@@ -1,0 +1,5 @@
+str = input()
+array = [int(str[i]) for i in range(len(str))]
+array.sort(reverse = True)
+for i in array:
+    print(i, end='')
